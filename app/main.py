@@ -10,6 +10,7 @@ from app.bot.handlers.remove import router as remove_router
 from app.bot.handlers.search import router as search_router
 from app.bot.handlers.track import router as track_router
 from app.config import settings
+from app.database.session import create_tables
 from app.services.price_checker import PriceChecker
 from app.services.user_service import UserService
 
