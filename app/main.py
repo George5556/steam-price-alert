@@ -5,6 +5,7 @@ from aiogram.filters import Command
 from aiogram.types import Message
 
 from app.bot.handlers.my_games import router as my_games_router
+from app.bot.handlers.remove import router as remove_router
 from app.bot.handlers.search import router as search_router
 from app.bot.handlers.track import router as track_router
 from app.config import settings
@@ -15,6 +16,7 @@ dp = Dispatcher()
 dp.include_router(search_router)
 dp.include_router(track_router)
 dp.include_router(my_games_router)
+dp.include_router(remove_router)
 
 
 @dp.message(Command("start"))
@@ -28,7 +30,7 @@ async def start_handler(message: Message) -> None:
 
 @dp.message(Command("help"))
 async def help_handler(message: Message) -> None:
-    await message.answer("Available commands: /start /help /search /track /my_games")
+    await message.answer("Available commands: /start /help /search /track /my_games /remove")
 
 
 async def main() -> None:
