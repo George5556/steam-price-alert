@@ -26,6 +26,12 @@ class TrackedGameService:
             return list(result.scalars().all())
 
     @staticmethod
+    async def get_all_games() -> list[TrackedGame]:
+        async with async_session() as session:
+            result = await session.execute(select(TrackedGame))
+            return list(result.scalars().all())
+
+    @staticmethod
     async def remove_game(user_id: int, game_id: str) -> None:
         async with async_session() as session:
             await session.execute(
