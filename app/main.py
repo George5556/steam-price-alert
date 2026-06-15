@@ -4,11 +4,13 @@ from aiogram import Bot, Dispatcher
 from aiogram.filters import Command
 from aiogram.types import Message
 
+from app.bot.handlers.search import router as search_router
 from app.config import settings
 from app.services.user_service import UserService
 
 bot = Bot(token=settings.bot_token)
 dp = Dispatcher()
+dp.include_router(search_router)
 
 
 @dp.message(Command("start"))
@@ -22,7 +24,7 @@ async def start_handler(message: Message) -> None:
 
 @dp.message(Command("help"))
 async def help_handler(message: Message) -> None:
-    await message.answer("Available commands: /start /help")
+    await message.answer("Available commands: /start /help /search")
 
 
 async def main() -> None:
