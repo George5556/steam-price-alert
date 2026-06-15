@@ -57,6 +57,8 @@ async def run_price_checker() -> None:
 
 
 async def main() -> None:
+    await create_tables()
+
     scheduler.add_job(
         run_price_checker,
         trigger="interval",
