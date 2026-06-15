@@ -1,1 +1,11 @@
-TODO
+aiogram==3.22.0
+SQLAlchemy==2.0.43
+asyncpg==0.30.0
+alembic==1.16.5
+aiohttp==3.12.15
+APScheduler==3.11.0
+python-dotenv==1.1.1
+pydantic-settings==2.10.1
+pytest==8.4.2
+pytest-asyncio==1.1.0
+matplotlib==3.10.6
